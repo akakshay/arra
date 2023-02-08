@@ -27,3 +27,8 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('get-reviews/{shop}', [ShopController::class, 'getReviews']);
     Route::post('post-shop-review/{shop}', [ShopController::class, 'postShopReview']);
 });
+
+Route::prefix('auth')->group(function () {
+    Route::get('{provider}', [AuthController::class, 'redirect']);
+    Route::get('{provider}/callback', [AuthController::class, 'callback']);
+});
