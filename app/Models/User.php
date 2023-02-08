@@ -18,6 +18,8 @@ class User extends Authenticatable implements JWTSubject
         'name',
         'email',
         'password',
+        'address',
+        'pincode'
     ];
     /**
      * The attributes that should be hidden for arrays.
